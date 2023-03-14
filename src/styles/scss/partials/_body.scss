@@ -1,0 +1,57 @@
+html {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 10px;
+}
+
+body {
+    background-color: $body-bg;
+    color: $comment-text;
+}
+
+[class*="__container"] {
+    width: calc(100% - 80px);
+    margin: 0 auto;
+}
+
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+input,
+textarea {
+    border: 1px solid $input-border;
+    background-color: $input-bg;
+    color: $input-text;
+    &:focus {
+        outline: 2px outset $input-text;
+        border-radius: 3px;
+    }
+    &::placeholder {
+        opacity: 0.5;
+    }
+}
+
+button {
+    border: 1px outset $button-border;
+    background-color: $button-bg;
+    color: $button-text;
+    &:focus {
+        outline: 2px outset $input-text;
+        border-radius: 3px;
+    }
+}
+
+a {
+    color: $links;
+}
+
+.footer {
+    height: 40px;
+}

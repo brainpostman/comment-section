@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/css/main.css">
+    <title>Comment section</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--HEADER-->
+        <header class="header">
+            <div class="header__container">
+                <h1 class="header__title">Добро пожаловать в гостевую комнату!</h1>
+                <p class="header__subtitle">Оставьте ваше впечатление о нашем сайте!</p>
+            </div>
+        </header>
+        <!--COMMENT SECTION-->
+        <main class="main">
+            <section class="submition">
+                <div class="submition__container">
+                    <form id="comment-form" name="comment-form" class="comment-form" novalidate>
+                        <div class="box__content-form">
+                            <div class="box__meta-info">
+                                <div class="box__sender">
+                                    <label for="sender" class="label label__sender">Ваше имя</label>
+                                    <input name="sender" id="sender" type="text" placeholder="Ваше имя"
+                                        class="input__sender" pattern="^[a-zA-Zа-яА-Я0-9\-_ ]{6,30}$" minlength="6"
+                                        maxlength="30" required>
+                                    <div class="error error__sender"></div>
+                                </div>
+                                <div class="box__date">
+                                    <label for="date" class="label label__date">Дата отправки</label>
+                                    <!--нерабочие атрибуты даны для фолбэка инпута на type='text' при отсутствии поддержки type='date'-->
+                                    <input type="date" name="date" id="date" class="input__date"
+                                        placeholder="дд-мм-гггг"
+                                        pattern="^(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-](19|20)\d\d$"
+                                        minlength="10" maxlength="10" min="1970-01-01">
+                                    <div class="error error__date"></div>
+                                </div>
+                            </div>
+                            <div class="box__text">
+                                <label for="text" class="label label__text">Ваш комментарий</label>
+                                <textarea name="text" id="text" cols="30" rows="10" class="input__text" minlength="1"
+                                    maxlength="10000" placeholder="Ваш комментарий..." required title=""></textarea>
+                                <div class="error error__text"></div>
+                            </div>
+                            <button type="submit" form="comment-form" class="input__submit"
+                                id="submit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="comments">
+                <div class="comments__container">
+                    <h2 class="comments__title">комментарии (<span id="count" class="comments__count">0</span>)</h2>
+                    <ul class="comments__section">
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <!--FOOTER-->
+        <footer class="footer">
+            <div class="footer__container">
+            </div>
+        </footer>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

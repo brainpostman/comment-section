@@ -111,6 +111,11 @@ form.date.oninput = () => {
     }
 }
 
+form.date.onchange = () => {
+    let errorElem = document.querySelector('.error__date');
+    errorElem.innerHTML = '';
+}
+
 form.date.onfocus = (event) => {
     event.target.placeholder = '';
 }
